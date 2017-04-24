@@ -5,5 +5,5 @@ from django.http import HttpResponse
 # Create your views here.
 def index(request):
     """Pagina Inicial"""
-    return HttpResponse('Bem Vindo ao Connectedin')
+    return render(request, 'perfis\index.html')
 
