@@ -14,8 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url
-from perfis.views import index
+from perfis.views import index, exibir
 
 urlpatterns = [
     url(r'^$', index, name='index'),
+    url(r'^perfis/(?P<perfil_id>\d+)/$', exibir, name='perfis'),
 ]
