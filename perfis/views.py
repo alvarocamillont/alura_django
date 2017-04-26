@@ -10,10 +10,7 @@ def index(request):
 
 def exibir(request, perfil_id):
     """View da pagina de Perfil"""
-    if perfil_id == '1':
-        perfil = Perfil('Flavio Almeida', 'flavio@flavio.com.br', '722',
-                        'Caelum')
 
+    perfil = Perfil.objects.get(id=perfil_id)
     return render(request, 'perfis\perfil.html', {"perfil": perfil})
-
 
