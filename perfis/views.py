@@ -5,7 +5,8 @@ from perfis.models import Perfil
 # Create your views here.
 def index(request):
     """Pagina Inicial"""
-    return render(request, 'perfis\index.html')
+    perfis = Perfil.objects.all()
+    return render(request, 'perfis\index.html', {'perfis': perfis})
 
 
 def exibir(request, perfil_id):
@@ -13,4 +14,3 @@ def exibir(request, perfil_id):
 
     perfil = Perfil.objects.get(id=perfil_id)
     return render(request, 'perfis\perfil.html', {"perfil": perfil})
-
