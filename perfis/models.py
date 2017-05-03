@@ -11,7 +11,8 @@ class Perfil (models.Model):
     contatos = models.ManyToManyField('self')
 
     def convidar(self, perfil_convidado):
-        Convite(solicitante=self, convidado=perfil_convidado).save()
+        convite = Convite(solicitante=self, convidado=perfil_convidado)
+        convite.save()  # TODO Bug do convite...
 
 
 class Convite(models.Model):

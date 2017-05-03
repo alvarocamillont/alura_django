@@ -18,9 +18,11 @@ def exibir(request, perfil_id):
     """View da pagina de Perfil"""
     perfil = Perfil.objects.get(id=perfil_id)
     perfil_logado = get_perfil_logado(request)
+    eh_contato = perfil in perfil_logado.contatos.all()
     argumentos_view = {}
     argumentos_view['perfil'] = perfil
     argumentos_view['perfil_logado'] = perfil_logado
+    argumentos_view['eh_contato'] = eh_contato
 
     return render(request, 'perfis\perfil.html', argumentos_view)
 
