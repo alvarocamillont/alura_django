@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from perfis.models import Perfil
+from perfis.models import Perfil, Convite
 from django.shortcuts import redirect
 
 
@@ -35,3 +35,10 @@ def convidar(request, perfil_id):
 
 def get_perfil_logado(request):
     return Perfil.objects.get(id='1')
+
+
+def aceitar(request, convite_id):
+    """Aceite de convite"""
+    convite = Convite.objects.get(id=convite_id)
+    convite.aceitar()
+    return redirect('index')
