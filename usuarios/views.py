@@ -30,7 +30,6 @@ class RegistrarUsuarioView(View):
 
                 # cria o perfil
                 perfil = Perfil(nome=dados_form['nome'],
-                                email=dados_form['email'],
                                 telefone=dados_form['telefone'],
                                 nome_empresa=dados_form['nome_empresa'],
                                 usuario=usuario)
