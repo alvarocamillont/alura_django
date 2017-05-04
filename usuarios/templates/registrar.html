@@ -26,6 +26,15 @@
 
     <button class="btn btn-lg btn-primary btn-block" type="submit" value="Login">Registrar</button>
 
+        <hr/>
+
+    {% if form.errors %}
+      <div class="alert alert-danger">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        {{form.non_field_errors}}
+      </div>
+    {% endif %}
+
   </form>
 
 {% endblock %}
